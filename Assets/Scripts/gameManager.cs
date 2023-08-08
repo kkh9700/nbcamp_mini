@@ -7,18 +7,26 @@ using System.Linq;
 public class gameManager : MonoBehaviour
 {
     public Text timeTxt;
-    public GameObject endTxt;
- 
+    public Text matchTxt;
+    public Text endTime;
+    public Text endMatch;
+    public Text totalScore;
+
+    public GameObject successImage;
+    public GameObject failImage;
     public GameObject card;
     public GameObject firstCard;
     public GameObject secondCard;
+
+    public Animator anim;
 
     public AudioSource audioSource;
     public AudioClip match;
 
     public static gameManager I;
 
-    float time = 0f;
+    float time;
+    int tryMatch;
     int cards;
 
     void Awake()
@@ -28,7 +36,7 @@ public class gameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1.0f;
+        init();
         cards = 8;
 
         int[] rtans = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
@@ -58,13 +66,29 @@ public class gameManager : MonoBehaviour
 
         if(time >= 30)
         {
+            failImage.SetActive(true);
             endGame();
         }
+        else if(time >= 20)
+        {
+            anim.SetBool("isWarning", true);
+        }
+    }
+
+    void init()
+    {
+        Time.timeScale = 1.0f;
+        time = 0f;
+        tryMatch = 0;
+        anim.SetBool("isWarning", false);
     }
 
 
     public void isMatched()
     {
+        tryMatch++;
+        matchTxt.text = tryMatch.ToString();
+
         string firstCardImage = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage = secondCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
 
@@ -78,6 +102,7 @@ public class gameManager : MonoBehaviour
             cards--;
             if (cards == 0)
             {
+                successGame();
                 endGame();
             }
         }
@@ -93,7 +118,16 @@ public class gameManager : MonoBehaviour
 
     void endGame()
     {
-        endTxt.SetActive(true);
         Time.timeScale = 0.0f;
+    }
+
+    void successGame()
+    {
+        successImage.SetActive(true);
+        endTime.text = string.Concat("시간: ", timeTxt.text);
+        endMatch.text = string.Concat("횟수: ", matchTxt.text);
+        int score = 100 - ((int)time) - tryMatch;
+
+        totalScore.text = string.Concat("점수: ", score.ToString());
     }
 }
