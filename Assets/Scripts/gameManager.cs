@@ -8,7 +8,9 @@ public class gameManager : MonoBehaviour
 {
     public Text timeTxt;
     public GameObject endTxt;
- 
+    public Text limittxt; //메인씬에 캔버스 안에 있는 리미트텍스트 입니다.
+    float timelimit = 5f;
+
     public GameObject card;
     public GameObject firstCard;
     public GameObject secondCard;
@@ -60,6 +62,7 @@ public class gameManager : MonoBehaviour
         {
             endGame();
         }
+        LimitTime();
     }
 
 
@@ -74,7 +77,7 @@ public class gameManager : MonoBehaviour
 
             firstCard.GetComponent<card>().destroyCard();
             secondCard.GetComponent<card>().destroyCard();
-
+            timerefill();
             cards--;
             if (cards == 0)
             {
@@ -85,6 +88,8 @@ public class gameManager : MonoBehaviour
         {
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
+            timerefill();
+            time += 3f;
         }
 
         firstCard = null;
@@ -95,5 +100,28 @@ public class gameManager : MonoBehaviour
     {
         endTxt.SetActive(true);
         Time.timeScale = 0.0f;
+    }
+   
+    void LimitTime() // 업데이트 함수에 넣으면 정상 작동 할겁니다.
+    {
+        if (gameManager.I.firstCard != null && gameManager.I.secondCard == null)
+        {
+            limittxt.gameObject.SetActive(true);
+            limittxt.text = timelimit.ToString("N2");
+            timelimit -= Time.deltaTime;
+            if (timelimit <= 0)
+            {
+                gameManager.I.firstCard.GetComponent<card>().closeCard();
+                firstCard.GetComponent<card>().closeCard();
+                firstCard = null;
+                time += 3f; //이거는 isMatch함수의 else 부분에도 넣어주시면 감사하겠습니다.
+                timerefill();
+            }
+        }
+    }
+    void timerefill()
+    {
+        limittxt.gameObject.SetActive(false);
+        timelimit = 5f;
     }
 }
