@@ -79,7 +79,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1081254775021712731
@@ -393,7 +393,6 @@ MonoBehaviour:
   anim: {fileID: 2945375959583890615}
   flip: {fileID: 8300000, guid: c7655ab497071da42a6d6b9ec2a7327a, type: 3}
   audioSource: {fileID: 6578280748149783855}
-  text: {fileID: 2689093294735145096, guid: 872903012f990ee4fa16265d89c1b265, type: 3}
 --- !u!82 &6578280748149783855
 AudioSource:
   m_ObjectHideFlags: 0

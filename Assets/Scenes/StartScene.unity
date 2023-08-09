@@ -434,7 +434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA64\uBC84 \uCE74\uB4DC \uB4A4\uC9D1\uAE30"
+  m_Text: "\uB974\uD0C4\uC774\uB97C \uCC3E\uC544\uB77C"
 --- !u!222 &1222489183
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 1641469515}
   - component: {fileID: 1641469514}
   m_Layer: 5
-  m_Name: images
+  m_Name: rtans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +676,7 @@ Animator:
   m_GameObject: {fileID: 1641469512}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 74632cb3da7cad947b1c17e3d8ee1895, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1c95c25592a1d574b94dd956e69a45c5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 55a92a9307cf2864fbdc27f780a1cbf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecc5ba1fe8d106d4a814bf5775c5eabb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
