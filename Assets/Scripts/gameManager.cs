@@ -17,14 +17,18 @@ public class gameManager : MonoBehaviour
     public GameObject card;
     public GameObject firstCard;
     public GameObject secondCard;
+    public GameObject timer;
 
     public Animator anim;
 
     public AudioSource audioSource;
     public AudioClip match;
+    public AudioClip win;
 
     public static gameManager I;
 
+
+    float timelimit;
     float time;
     int tryMatch;
     int cards;
@@ -39,9 +43,9 @@ public class gameManager : MonoBehaviour
         init();
         cards = 8;
 
-        int[] rtans = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
+        int[] images = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 
-        rtans = rtans.OrderBy(item => Random.Range(-1.0f, 1.0f)).ToArray();
+        images = images.OrderBy(item => Random.Range(-1.0f, 1.0f)).ToArray();
 
         for (int i = 0; i < 16; i++)
         {
@@ -52,24 +56,31 @@ public class gameManager : MonoBehaviour
             float y = (i % 4) * 1.4f - 3.0f;
             newCard.transform.position = new Vector3(x, y, 0);
 
-            string rtanName = "rtan" + rtans[i].ToString();
-            newCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(rtanName);
+            string imageName = "Image" + images[i].ToString();
+            newCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(imageName);
+
+            newCard.GetComponent<card>().type = images[i] < 4 ? 0 : 1 ;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        time -= Time.deltaTime;
 
         timeTxt.text = time.ToString("N2");
 
-        if(time >= 30)
+        if (gameManager.I.firstCard != null && gameManager.I.secondCard == null)
+        {
+            LimitTime();
+        }
+
+            if (time <= 0)
         {
             failImage.SetActive(true);
             endGame();
         }
-        else if(time >= 20)
+        else if(time <= 20)
         {
             anim.SetBool("isWarning", true);
         }
@@ -78,7 +89,8 @@ public class gameManager : MonoBehaviour
     void init()
     {
         Time.timeScale = 1.0f;
-        time = 0f;
+        time = 60f;
+        timelimit = 5f;
         tryMatch = 0;
         anim.SetBool("isWarning", false);
     }
@@ -108,10 +120,12 @@ public class gameManager : MonoBehaviour
         }
         else
         {
+            time -= 3f;
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
         }
 
+        timerefill();
         firstCard = null;
         secondCard = null;
     }
@@ -128,6 +142,33 @@ public class gameManager : MonoBehaviour
         endMatch.text = string.Concat("È½¼ö: ", matchTxt.text);
         int score = 100 - ((int)time) - tryMatch;
 
+        audioSource.PlayOneShot(win);
+
         totalScore.text = string.Concat("Á¡¼ö: ", score.ToString());
     }
+
+    void LimitTime()
+    {
+        timer.SetActive(true);
+        Text t = timer.GetComponent<Text>();
+        t.text = timelimit.ToString("N2");
+        timelimit -= Time.deltaTime;
+        
+        if (timelimit <= 0)
+        {
+            gameManager.I.firstCard.GetComponent<card>().closeCard();
+            firstCard.GetComponent<card>().closeCard();
+            firstCard = null;
+            time += 3f;
+            timerefill();
+        }
+        
+    }
+
+    void timerefill()
+    {
+        timer.SetActive(false);
+        timelimit = 5f;
+    }
+
 }
