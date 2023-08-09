@@ -159,7 +159,7 @@ public class gameManager : MonoBehaviour
             gameManager.I.firstCard.GetComponent<card>().closeCard();
             firstCard.GetComponent<card>().closeCard();
             firstCard = null;
-            time += 3f;
+            time -= 3f;
             timerefill();
         }
         
