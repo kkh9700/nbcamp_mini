@@ -138,13 +138,13 @@ public class gameManager : MonoBehaviour
     void successGame()
     {
         successImage.SetActive(true);
-        endTime.text = string.Concat("½Ã°£: ", timeTxt.text);
-        endMatch.text = string.Concat("È½¼ö: ", matchTxt.text);
+        endTime.text = string.Concat("시간 : ", timeTxt.text);
+        endMatch.text = string.Concat("횟수 : ", matchTxt.text);
         int score = 100 + ((int)time) - tryMatch;
 
         audioSource.PlayOneShot(win);
 
-        totalScore.text = string.Concat("Á¡¼ö: ", score.ToString());
+        totalScore.text = string.Concat("점수 : ", score.ToString());
     }
 
     void LimitTime()
