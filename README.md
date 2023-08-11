@@ -49,6 +49,6 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
     }
 
 </details>
-<br>
 ![경고_애니메이션](https://github.com/kkh9700/nbcamp_mini/assets/77197725/ac62a0c9-47ed-4c31-8572-d0466fa38f70)
+<br>
 
