@@ -78,3 +78,34 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
         
 </details>
 <br>
+
+## 결과에 점수 표시 → 남은 시간, 매칭 시도한 횟수 등을 점수로 환산 (김경환)
+![종합점수](https://github.com/kkh9700/nbcamp_mini/assets/77197725/7d4bde7e-6a00-484c-b209-2f783e09b951)
+
+<details>
+<summary>종합점수</summary>
+
+
+    void Update()        // 프레임마다 호출되는 함수
+    {
+        time -= Time.deltaTime;        // 시간을 감소시킨다
+        ...
+    }
+        
+    public void isMatched()        // 카드가 맞았는지 확인
+    {
+        tryMatch++;        // 매칭횟수 증가
+        ...
+    }
+    
+    void successGame()        // 카드 맞추기를 성공했을 때
+    {
+        ...
+        int score = 100 + ((int)time) - tryMatch;        // 종합점수 계산식 : 100 + 남은시간 - 매칭횟수
+        totalScore.text = string.Concat("점수: ", score.ToString());        // 종합점수를 표시
+        ...
+    }
+    
+        
+</details>
+<br>
