@@ -18,11 +18,6 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
   *  클릭할 때(카드 뒤집을 때), 시작할 때, 진행 중일 때 성공, 실패 소리 넣어보기
 <br>
 
-## 시연 영상 (클릭시 이동)
-[![Video Label](http://img.youtube.com/vi/MJSjqc2qEqU/0.jpg)](https://youtu.be/MJSjqc2qEqU)
-<br>
-<br>
-
 ## 필수 기능 (매칭 성공 시, 팀원의 이름 표시)
 ![필수기능 성공](https://github.com/kkh9700/nbcamp_mini/assets/77197725/0f935102-e492-4741-ae84-d0335459d3fa)
 <details>
@@ -283,6 +278,12 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 
 </details>
 <br>
+
+## 시연 영상 (클릭시 이동)
+[![Video Label](http://img.youtube.com/vi/MJSjqc2qEqU/0.jpg)](https://youtu.be/MJSjqc2qEqU)
+<br>
+<br>
+
 
 ## 어려웠던 점
 * 팀원 이름을 표시하는 오브젝트가 결과창을 뚫고 나오는 버그가 생겼는데 hierarchy에서 오브젝트의 위치가 문제점이었습니다.
