@@ -52,3 +52,21 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 </details>
 <br>
 
+## 카드 뒤집기에서 실제로 카드가 뒤집어지는 모습 연출 (김경환)
+![카드_뒤집기](https://github.com/kkh9700/nbcamp_mini/assets/77197725/78377aed-3919-43fe-a63c-53382e5b2191)
+<br></br>
+![카드_뒤집기_open_애니메이션](https://github.com/kkh9700/nbcamp_mini/assets/77197725/18f7770b-7374-418a-9ee3-fcea8f12b8b5)
+![카드_뒤집기_close_애니메이션](https://github.com/kkh9700/nbcamp_mini/assets/77197725/13a68f79-76e8-4829-8f60-8b260c12e0d2)
+
+<details>
+<summary>경고 기능</summary>
+
+    public void ClickCard()        // 카드를 클릭했을 때
+    {
+        ...
+        anim.SetBool("isOpen", true);        // Animation의 Parameter인 isOpen을 true로 한다.
+        ...
+    }
+        
+</details>
+<br>
