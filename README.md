@@ -67,6 +67,14 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
         anim.SetBool("isOpen", true);        // Animation의 Parameter인 isOpen을 true로 한다.
         ...
     }
+
+    void closeCardInvoke()        // 카드를 close하는 Invoke method
+    {
+        ...
+        anim.SetBool("isOpen", false);        // Animation의 Parameter인 isOpen을 false로 한다.
+    }
+
+    
         
 </details>
 <br>
