@@ -10,22 +10,22 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 <details>
 <summary>팀원 이름 표시</summary>
 
-        void destroyCardInvoke()
+        void destroyCardInvoke()        // 카드 삭제시
         {
-            GameObject newText = Instantiate(text);
-            newText.transform.parent = GameObject.Find("Canvas").transform;
+            GameObject newText = Instantiate(text);        // 게임 오브젝트 newText 생성
+            newText.transform.parent = GameObject.Find("Canvas").transform;        // newText의 부모를 Canvas로 설정 
 
-            float x = this.transform.position.x;
-            float y = this.transform.position.y;
+            float x = this.transform.position.x;        // x에 카드의 position의 x를 저장
+            float y = this.transform.position.y;        // y에 카드의 position의 y를 저장
 
-            newText.transform.SetAsFirstSibling();
-            newText.transform.position = new Vector3(x, y, 0);
-            newText.transform.localScale = new Vector3(1f, 1f, 1f);
+            newText.transform.SetAsFirstSibling();        // newText를 첫번째로 설정
+            newText.transform.position = new Vector3(x, y, 0);        // newText의 position을 x,y,0으로 설정
+            newText.transform.localScale = new Vector3(1f, 1f, 1f);        // newText의 scale을 1,1,1로 설정
 
-            Text t = newText.GetComponent<Text>();
-            t.text = type == 0 ? "김경환" : "김민태";
+            Text t = newText.GetComponent<Text>();        // newText의 Text 컴포넌트를 가져옴
+            t.text = type == 0 ? "김경환" : "김민태";        // Text의 값을 멤버의 이름으로 설정
 
-            Destroy(gameObject);
+            Destroy(gameObject);        // 게임 오브젝트 카드를 삭제
         }
 
 </details>
