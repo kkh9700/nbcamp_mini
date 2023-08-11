@@ -13,7 +13,8 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
     ㅁㄴㅇㄹ
   </div>
 </details>
-```c#
+
+```
 void destroyCardInvoke()
 {
     GameObject newText = Instantiate(text);
