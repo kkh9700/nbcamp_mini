@@ -10,24 +10,24 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 <details>
 <summary>팀원 이름 표시</summary>
 
-    ```
+        ```
         void destroyCardInvoke()
         {
             GameObject newText = Instantiate(text);
             newText.transform.parent = GameObject.Find("Canvas").transform;
 
-        float x = this.transform.position.x;
-        float y = this.transform.position.y;
+            float x = this.transform.position.x;
+            float y = this.transform.position.y;
 
-        newText.transform.SetAsFirstSibling();
-        newText.transform.position = new Vector3(x, y, 0);
-        newText.transform.localScale = new Vector3(1f, 1f, 1f);
+            newText.transform.SetAsFirstSibling();
+            newText.transform.position = new Vector3(x, y, 0);
+            newText.transform.localScale = new Vector3(1f, 1f, 1f);
 
-        Text t = newText.GetComponent<Text>();
-        t.text = type == 0 ? "김경환" : "김민태";
+            Text t = newText.GetComponent<Text>();
+            t.text = type == 0 ? "김경환" : "김민태";
 
-        Destroy(gameObject);
-    }
-```
+            Destroy(gameObject);
+        }
+        ```
 
 </details>
