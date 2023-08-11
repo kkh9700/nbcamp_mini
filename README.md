@@ -34,3 +34,20 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 
 ## 타이머 시간이 촉박 할 때 게이머에게 경고하는 기능(김경환)
 ![경고기능](https://github.com/kkh9700/nbcamp_mini/assets/77197725/9379ec7a-efa0-4303-8884-e23c2d91ffe6)
+<details>
+<summary>팀원 이름 표시</summary>
+
+    void Update()
+    {
+        ...
+        ...
+        ...
+        else if(time <= 20)        // 시간이 20초 이하일 때
+        {
+            anim.SetBool("isWarning", true);        // Animation의 Parameter인 isWarning을 true로 한다.
+        }
+    }
+
+</details>
+<br>
+
