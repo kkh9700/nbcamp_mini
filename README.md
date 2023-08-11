@@ -10,7 +10,7 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 <details>
   <summary>팀원 이름 표시</summary>
   <div markdown="1">
-    ```
+```
 void destroyCardInvoke()
 {
     GameObject newText = Instantiate(text);
