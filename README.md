@@ -12,9 +12,6 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
   <div markdown="1">
     ㅁㄴㅇㄹ
   </div>
-  <div markdown="2">
-    ㅁㄴㅇㄹ
-  </div>
 </details>
 ```c#
 void destroyCardInvoke()
