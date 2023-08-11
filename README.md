@@ -43,10 +43,8 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 <details>
 <summary>경고 기능</summary>
 
-    void Update()
+    void Update()        // 프레임마다 호출되는 함수
     {
-        ...
-        ...
         ...
         else if(time <= 20)        // 시간이 20초 이하일 때
         {
