@@ -7,7 +7,7 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 <br>
 
 ## 시연 영상
-![시연 영상](https://www.youtube.com/watch?v=MJSjqc2qEqU)
+[![카드 뒤집기 영상_Moment](https://github.com/kkh9700/nbcamp_mini/assets/77197725/02220385-2b27-410a-a04b-12151a59a8a2)]([유투브링크](https://www.youtube.com/watch?v=MJSjqc2qEqU))
 
 ## 필수 기능 (매칭 성공 시, 팀원의 이름 표시 / 실패 시 실패 표시)
 ![필수기능 성공](https://github.com/kkh9700/nbcamp_mini/assets/77197725/0f935102-e492-4741-ae84-d0335459d3fa)
