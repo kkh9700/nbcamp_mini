@@ -11,7 +11,6 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
   <summary>토글 접기/펼치기</summary>
   <div markdown="1">
   </div>
-  <summary>토글 접기/펼치기</summary>
   <div markdown="1">
   </div>
 </details>
