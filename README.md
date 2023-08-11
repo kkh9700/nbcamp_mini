@@ -6,11 +6,6 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 ```
 <br>
 
-## 시연 영상 (클릭시 이동)
-[![Video Label](http://img.youtube.com/vi/MJSjqc2qEqU/0.jpg)](https://youtu.be/MJSjqc2qEqU)
-<br>
-<br>
-
 ## 역활 분배
 * 김경환 (팀장)
   * 매칭 성공 시, 팀원의 이름 표시
@@ -21,6 +16,12 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
   *  firstCard 고르고 5초 간 카운트 다운 - 안 고르면 다시 닫기
   *  실패할 때 마다 시간 감소 효과
   *  클릭할 때(카드 뒤집을 때), 시작할 때, 진행 중일 때 성공, 실패 소리 넣어보기
+<br>
+
+## 시연 영상 (클릭시 이동)
+[![Video Label](http://img.youtube.com/vi/MJSjqc2qEqU/0.jpg)](https://youtu.be/MJSjqc2qEqU)
+<br>
+<br>
 
 ## 필수 기능 (매칭 성공 시, 팀원의 이름 표시)
 ![필수기능 성공](https://github.com/kkh9700/nbcamp_mini/assets/77197725/0f935102-e492-4741-ae84-d0335459d3fa)
