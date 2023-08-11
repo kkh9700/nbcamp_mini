@@ -35,7 +35,7 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 ## 타이머 시간이 촉박 할 때 게이머에게 경고하는 기능(김경환)
 ![경고기능](https://github.com/kkh9700/nbcamp_mini/assets/77197725/9379ec7a-efa0-4303-8884-e23c2d91ffe6)
 <details>
-<summary>팀원 이름 표시</summary>
+<summary>경고 기능</summary>
 
     void Update()
     {
@@ -50,4 +50,5 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 
 </details>
 <br>
+![경고_애니메이션](https://github.com/kkh9700/nbcamp_mini/assets/77197725/ac62a0c9-47ed-4c31-8572-d0466fa38f70)
 
