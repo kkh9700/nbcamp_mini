@@ -4,6 +4,7 @@
 ```
 git clone https://github.com/kkh9700/nbcamp_mini.git ./
 ```
+<br>
 
 ## 필수 기능 (매칭 성공 시, 팀원의 이름 표시 / 실패 시 실패 표시)
 ![필수기능 성공](https://github.com/kkh9700/nbcamp_mini/assets/77197725/0f935102-e492-4741-ae84-d0335459d3fa)
@@ -29,3 +30,7 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
         }
 
 </details>
+<br>
+
+## 타이머 시간이 촉박 할 때 게이머에게 경고하는 기능(김경환)
+![경고기능](https://github.com/kkh9700/nbcamp_mini/assets/77197725/9379ec7a-efa0-4303-8884-e23c2d91ffe6)
