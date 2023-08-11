@@ -59,7 +59,7 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 ![카드_뒤집기_close_애니메이션](https://github.com/kkh9700/nbcamp_mini/assets/77197725/13a68f79-76e8-4829-8f60-8b260c12e0d2)
 
 <details>
-<summary>경고 기능</summary>
+<summary>카드 뒤집는 애니메이션</summary>
 
     public void ClickCard()        // 카드를 클릭했을 때
     {
