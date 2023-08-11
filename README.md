@@ -9,7 +9,6 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 ![필수기능 성공](https://github.com/kkh9700/nbcamp_mini/assets/77197725/0f935102-e492-4741-ae84-d0335459d3fa)
 <details>
 <summary>팀원 이름 표시</summary>
-<div markdown="1">
     ```
     void destroyCardInvoke()
     {
@@ -29,5 +28,4 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
         Destroy(gameObject);
     }
     ```
-</div>
 </details>
