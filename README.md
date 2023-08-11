@@ -10,8 +10,10 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
 <details>
   <summary>토글 접기/펼치기</summary>
   <div markdown="1">
+    ㅁㄴㅇㄹ
   </div>
-  <div markdown="1">
+  <div markdown="2">
+    ㅁㄴㅇㄹ
   </div>
 </details>
 ```c#
