@@ -109,3 +109,162 @@ git clone https://github.com/kkh9700/nbcamp_mini.git ./
         
 </details>
 <br>
+
+## firstCard 고르고 5초 간 카운트 다운 - 안 고르면 다시 닫기 (김민태)
+![5초_제한](https://github.com/kkh9700/nbcamp_mini/assets/77197725/38fcf0b0-f58f-4562-8392-84daa520cc18)
+<details>
+<summary>종합점수</summary>
+
+    void Update()        // 프레임마다 호출되는 함수
+    {
+        ...
+        if (gameManager.I.firstCard != null && gameManager.I.secondCard == null)        // 첫번째 카드만 열렸을 때
+        {
+            LimitTime();        // 시간제한 함수 실행
+        }
+        ...
+    }
+
+    void LimitTime()        // 시간제한 함수
+    {
+        timer.SetActive(true);        // timer가 보이게 하기
+        Text t = timer.GetComponent<Text>();        // timer의 Text 컴포넌트 가져오기 
+        t.text = timelimit.ToString("N2");        // Text 컴포넌트의 값에 timelimit를 넣기
+        timelimit -= Time.deltaTime;        // timelimit 감소
+        
+        if (timelimit <= 0)        // timelimit가 0이하일 떄
+        {
+            firstCard.GetComponent<card>().closeCard();        // 첫번째 카드 닫기
+            firstCard = null;        // 첫번째 카드를 초기화
+            ...
+            timerefill();        // 시간을 리필하는 함수 실행
+        }
+    }
+
+    void timerefill()        // 시간 리필 함수
+    {
+        timer.SetActive(false);        // 타이머가 보이지 않게 하기
+        timelimit = 5f;        // timelimit를 5로 초기화
+    }
+
+</details>
+<br>
+
+## 실패할 때 마다 시간 감소 효과 (김민태)
+![실패시_시간_감소](https://github.com/kkh9700/nbcamp_mini/assets/77197725/1e987610-3b2d-4d75-a73f-2a7ed2b5f84f)
+<details>
+<summary>실패시 시간 감소</summary>
+
+    public void isMatched()        // 카드가 맞았는지 확인
+    {
+        ...
+
+        if (firstCardImage == secondCardImage)        // 카드 맞추기에 성공
+        {
+           ...
+        }
+        else        // 카드 맞추기에 실패
+        {
+            time -= 3f;        // 시간 3초 감소
+            ...
+        }
+        ...
+    }
+    
+    void LimitTime()        // 시간제한 함수
+    {
+        ...
+        
+        if (timelimit <= 0)        // 시간 제한을 넘었을 때
+        {
+            ...
+            time += 3f;        // 시간 3초 감소
+            ...
+        }
+        
+    }
+
+</details>
+<br>
+
+## 클릭할 때(카드 뒤집을 때), 시작할 때, 진행 중일 때 성공, 실패 소리 넣어보기 (김민태)
+<details>
+<summary>시작할 때 소리</summary>
+
+    public class audioManager : MonoBehaviour        // audioManager 스크립트
+    {
+        public AudioSource audioSource;        // audioSource 컴포넌트
+        public AudioClip bgmusic;        // bgm 음악
+
+        void Start()
+        {
+            audioSource.clip = bgmusic;        // audioSource의 clip을 bgmusic으로 설정
+            audioSource.Play();        // 음악 재생
+        }
+    }
+
+</details>
+<details>
+<summary>클릭할 때(카드 뒤집을 때)</summary>
+
+    public class card : MonoBehaviour        // card 스크립트
+    {
+        public AudioSource audioSource;        // audioSource 컴포넌트
+        public AudioClip flip;        // 뒤집을 때 나는 음악
+        ...
+        
+        public void ClickCard()        // 카드가 클릭됬을 때
+        {
+            audioSource.PlayOneShot(flip);        // filp 재생
+        }
+    }
+
+</details>
+
+<details>
+<summary>카드 맞추기 성공</summary>
+
+    public class gameManager : MonoBehaviour        // gameManager 스크립트
+    {
+        public AudioSource audioSource;        // audioSource 컴포넌트
+        public AudioClip match;        // 카드 맞추기 성공했을 때 나는 음악
+        ...
+
+        public void isMatched()        // 카드가 맞았는지 확인
+        {
+            ...
+
+            if (firstCardImage == secondCardImage)        // 카드가 맞았을 때
+            {
+                audioSource.PlayOneShot(match);        // match 재생
+                ...
+            }
+            else
+            {
+                ...
+            }
+
+            ...
+    }
+
+</details>
+
+<details>
+<summary>게임 클리어</summary>
+
+    public class gameManager : MonoBehaviour        // gameManager 스크립트
+    {
+        public AudioSource audioSource;        // audioSource 컴포넌트
+        public AudioClip win;        // 승리했을 때 나는 음악
+        ...
+
+        void successGame()        // 승리했을 때
+        {
+            ...
+            audioSource.PlayOneShot(win);        // win 재생
+            ...
+        }
+    }
+
+</details>
+<br>
